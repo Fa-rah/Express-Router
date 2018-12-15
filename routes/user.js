@@ -207,8 +207,9 @@ router.delete('/:id', (req, res) => {
 //  To validate the POST PUT requestes
 function userValidating(user) {
   const userSchema = {
-    'name': Joi.string().min(3).required(),
-    'age': Joi.number()
+    'name': Joi.string().min(5).required(),
+    'email': Joi.string().required(),
+    'password': Joi.string().min(5).required()
   }
   return Joi.validate(user, userSchema);
 }
