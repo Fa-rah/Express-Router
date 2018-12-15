@@ -77,7 +77,7 @@ router.post('/register', (req, res) => {
 });
 
 // Login check
-router.post('checKlogin', (req, res) => {
+router.post('/checKlogin', (req, res) => {
   var token = req.headers['x-access-token'];
   if (token)
     jwt.verify(token, 'publickKey', (err, decoded) => {
@@ -91,7 +91,7 @@ router.post('checKlogin', (req, res) => {
 });
 
 // User login
-router.post('login', (req, res) => {
+router.post('/login', (req, res) => {
   const validating = userValidating(req.body);
   if (validating.error) {
     res.status(400).send(validating.error.details);
